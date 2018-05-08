@@ -9,10 +9,10 @@ const compute = () => {
     myhours = document.getElementById('hours'), 
     mydays = document.getElementById('days'),
     student = document.getElementById('student'),
-    result = parseInt(mypay.value) * parseInt(mydays.value) * parseInt(myhours.value)
+    result = parseInt(mypay.value) * parseInt(mydays.value) * parseInt(myhours.value);
 
-    student.checked ? alert(result * 0.85) : alert(result * 0.75); 
-    document.getElementById('output').innerHTML = student.checked ? result * 0.85 : result * 0.75;
+    document.getElementById('output').innerHTML = `Your monthly salary is ${student.checked ? result * 0.85 : result * 0.75} dollars.`;
+    
     mypay.value = '', myhours.value = '', mydays.value = '';
 }
 
