@@ -24,18 +24,32 @@
             <label class="item" for="hours">Average hours a day:</label>
             <input class="item" type="text" id="hours">
             <label class="item" for="month">Average days in month:</label>
-            <input class="item" type="text" id="month">
-            <div class="item" >
+            <input class="item" type="text" id="days">
+            <div class="item">
                 <label for="student">Student: </label>
                 <span>Yes</span>
                 <input type="radio" id="student" name="question">
                 <span>No</span>
                 <input type="radio" id="student2" name="question">
             </div>
-            <button class="item">Compute</button>
-            <p class="item">60000 USD<br> per month</p>
+            <button onclick="compute()" class="item">Compute</button>
+            <p class="item">60000 USD
+                <br> per month</p>
         </div>
     </div>
+    <script src="index.js"></script>
+    <script>
+        
+        const compute = () => {
+            let mypay = document.getElementById('pay'), 
+            myhours = document.getElementById('hours'), 
+            mydays = document.getElementById('days'),
+            student = document.getElementById('student');
+
+            student.checked ? alert(mypay.value * myhours.value * mydays.value*0.85) : alert(mypay.value * myhours.value * mydays.value * 0.75); 
+            mypay.value = '', myhours.value = '', mydays.value = '';
+        }
+    </script>
 </body>
 
 </html>
