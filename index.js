@@ -11,8 +11,13 @@ const compute = () => {
     student = document.getElementById('student'),
     result = parseInt(mypay.value) * parseInt(mydays.value) * parseInt(myhours.value);
 
-    document.getElementById('output').innerHTML = `Your monthly salary is ${student.checked ? result * 0.85 : result * 0.75} dollars.`;
+    if(student.value==='' || myhours.value==='' || mydays.value==='') {
+        alert('Fill out all the fields!');
+        return;
+    }
     
+    document.getElementById('output').innerHTML = `Your monthly salary is ${student.checked ? result * 0.85 : result * 0.75} dollars.`;
+
     mypay.value = '', myhours.value = '', mydays.value = '';
 }
 
